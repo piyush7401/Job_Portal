@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel");
 
-async function registerController(req,res){
+async function registerController(req,res,next){
   const { name, email, password } = req.body;
   //validate
   if (!name) {
@@ -12,11 +12,13 @@ async function registerController(req,res){
   if (!password) {
     next("password is required and greater than 6 character");
   }
+
   const exisitingUser = await userModel.findOne({ email });
   if (exisitingUser) {
     next("Email Already Register Please Login");
   }
   const user = await userModel.create({ name, email, password });
+  
   //token
 //   const token = user.createJWT();
 //   res.status(201).send({
