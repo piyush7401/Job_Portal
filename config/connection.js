@@ -14,4 +14,4 @@ async function connection(){
 }
 
 
-module.export = {connection}
+module.exports = {connection}
