@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const validator =  require("validator");
 const bcrypt = require("bcryptjs");
+const JWT = require("jsonwebtoken");
 
-// import JWT from "jsonwebtoken";
 
 //schema
 const userSchema = new mongoose.Schema(
@@ -49,11 +49,12 @@ userSchema.pre("save", async function () {
 // };
 
 //JSON WEBTOKEN
-// userSchema.methods.createJWT = function () {
-//   return JWT.sign({ userId: this._id }, process.env.JWT_SECRET, {
-//     expiresIn: "1d",
-//   });
-// };
+
+userSchema.methods.createJWT = function () {
+  return JWT.sign({ userId: this._id }, process.env.JWT_SECRET, {
+    expiresIn: "1d",
+  });
+};
 
 // creation of model
 
