@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator =  require("validator");
-// import bcrypt from "bcryptjs";
+const bcrypt = require("bcryptjs");
+
 // import JWT from "jsonwebtoken";
 
 //schema
@@ -35,11 +36,11 @@ const userSchema = new mongoose.Schema(
 
 
 // middelwares
-// userSchema.pre("save", async function () {
-//   if (!this.isModified) return;
-//   const salt = await bcrypt.genSalt(10);
-//   this.password = await bcrypt.hash(this.password, salt);
-// });
+userSchema.pre("save", async function () {
+  if (!this.isModified) return;
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
 
 //compare password
 // userSchema.methods.comparePassword = async function (userPassword) {
