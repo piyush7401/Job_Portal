@@ -1,5 +1,6 @@
 const express = require("express");
 const testPostController = require("../controllers/testController");
+const userAuth = require("../middleware/authMiddleware");
 // import userAuth from "../middelwares/authMiddleware.js";
 
 //router object

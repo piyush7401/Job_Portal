@@ -60,7 +60,7 @@ async function loginController(req, res, next){
     user,
     token,
   });
-  
+
 };
 
 module.exports = {registerController,loginController};
