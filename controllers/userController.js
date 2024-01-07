@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel.js");
 
-export const updateUserController = async (req, res, next) => {
+ async function updateUserController(req, res, next){
   const { name, email, lastName, location } = req.body;
   if (!name || !email || !lastName || !location) {
     next("Please Provide All Fields");
@@ -19,3 +19,4 @@ export const updateUserController = async (req, res, next) => {
   });
   
 };
+
