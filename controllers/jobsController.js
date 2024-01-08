@@ -8,7 +8,7 @@ async function createJobController(req, res, next){
   if (!req.body.company || !req.body.position) {
     next("Please Provide All Fields");
   }
-  req.body.createdBy = req.user.userId;
+  req.body.createdBy = req.userId;
   const job = await jobsModel.create(req.body);
   res.status(201).json({ job });
 };

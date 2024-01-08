@@ -4,8 +4,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 async function connection(){
-        const url = process.env.mogo_url;
-        const connect = await mongoose.connect(mogo_url);
+        const url = process.env.mongo_url;
+        const connect = await mongoose.connect(url);
         if(!connect){
             next("Mongo is not connected");
         }

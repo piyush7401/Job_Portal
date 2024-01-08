@@ -1,5 +1,5 @@
 const userModel = require("../models/userModel");
-
+const bcrypt = require("bcryptjs");
 async function registerController(req,res,next){
   const { name, email, password } = req.body;
   //validate
@@ -21,6 +21,7 @@ async function registerController(req,res,next){
   
   //token
    const token = user.createJWT();
+  //  headers.append("Authorization", "Bearer " + token);
    res.status(201).send({
      sucess: true,
      message: "User Created Successfully",
@@ -46,7 +47,9 @@ async function loginController(req, res, next){
     next("Invalid Useraname or password");
   }
   //compare password
-  const isMatch = await user.comparePassword(password);
+  // const match = await user.comparePassword(password);
+ 
+  const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
     next("Invalid Useraname or password");
   }
@@ -54,7 +57,7 @@ async function loginController(req, res, next){
 
   const token = user.createJWT();
 
-  res.status(200).json({
+  res.status(200).cookie("token",token,{samesite:"none",secure:true}).json({
     success: true,
     message: "Login SUccessfully",
     user,

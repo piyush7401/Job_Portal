@@ -87,7 +87,7 @@ const router = express.Router();
  */
 
 // REGISTER || POPST
-router.post("/register", limiter, registerController);
+router.post("/register", registerController);
 
 /**
  * @swagger
@@ -113,6 +113,6 @@ router.post("/register", limiter, registerController);
  */
 
 // LOGIN || POST
-router.post("/login", limiter, loginController);
+router.post("/login", loginController);
 
 module.exports = router;
