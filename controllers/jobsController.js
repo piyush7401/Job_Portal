@@ -1,11 +1,12 @@
 const jobsModel = require("../models/jobsModel");
 const mongoose = require("mongoose");
+
 // import moment from "moment";
 
 // ====== CREATE JOB ======
 async function createJobController(req, res, next){
-//   const { company, position } = req.body;
-  if (!req.body.company || !req.body.position) {
+const { company, position } = req.body;
+  if (!company || !position) {
     next("Please Provide All Fields");
   }
   req.body.createdBy = req.userId;
@@ -170,3 +171,5 @@ async function createJobController(req, res, next){
 //     .status(200)
 //     .json({ totlaJob: stats.length, defaultStats, monthlyApplication });
 // };
+
+module.exports = {createJobController};

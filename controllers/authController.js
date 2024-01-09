@@ -1,28 +1,30 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcryptjs");
+
+
 async function registerController(req,res,next){
   const { name, email, password } = req.body;
   //validate
   if (!name) {
-    next("name is required");
+    return next("name is required");
   }
   if (!email) {
-    next("email is required");
+    return next("email is required");
   }
   if (!password) {
-    next("password is required and greater than 6 character");
+    return next("password is required and greater than 6 character");
   }
 
   const exisitingUser = await userModel.findOne({ email });
   if (exisitingUser) {
-    next("Email Already Register Please Login");
+    return next("Email Already Register Please Login");
   }
   const user = await userModel.create({ name, email, password });
   
   //token
    const token = user.createJWT();
   //  headers.append("Authorization", "Bearer " + token);
-   res.status(201).send({
+   res.status(201).cookie("token",token,{samesite:"none",secure:true}).json({
      sucess: true,
      message: "User Created Successfully",
      user: {
@@ -39,19 +41,19 @@ async function loginController(req, res, next){
   const { email, password } = req.body;
   //validation
   if (!email || !password) {
-    next("Please Provide All Fields");
+    return next("Please Provide All Fields");
   }
   //find user by email
   const user = await userModel.findOne({ email }).select("+password");   //yeh select password ko hide kardega in user mai
+  
   if (!user) {
-    next("Invalid Useraname or password");
+    return next("Invalid Useraname or password");
   }
   //compare password
-  // const match = await user.comparePassword(password);
  
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    next("Invalid Useraname or password");
+    return next("Invalid Useraname or password");
   }
   user.password = undefined;
 
