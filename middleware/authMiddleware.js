@@ -10,7 +10,7 @@ async function userAuth(req, res, next){
   try {
     const payload = JWT.verify(token, process.env.JWT_SECRET);
     req.userId =  payload.userId;
-    console.log(req.userId);
+    // console.log(req.userId);
     next();
   } catch (error) {
     next("Auth Failed");
