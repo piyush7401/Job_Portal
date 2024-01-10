@@ -113,8 +113,7 @@ async function deleteJobController(req, res, next){
     next(`No Job Found With This ID ${id}`);
   }
   if (!(req.user.userId === job.createdBy.toString())) {
-    next("Your Not Authorize to delete this job");
-    return;
+    return next("Your Not Authorize to delete this job");
   }
   await job.deleteOne();
   res.status(200).json({ message: "Success, Job Deleted!" });
