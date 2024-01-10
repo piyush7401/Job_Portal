@@ -104,21 +104,21 @@ async function updateJobController(req, res, next){
 };
 
 // // ======= DELETE JOBS ===========
-// export const deleteJobController = async (req, res, next) => {
-//   const { id } = req.params;
-//   //find job
-//   const job = await jobsModel.findOne({ _id: id });
-//   //validation
-//   if (!job) {
-//     next(`No Job Found With This ID ${id}`);
-//   }
-//   if (!req.user.userId === job.createdBy.toString()) {
-//     next("Your Not Authorize to delete this job");
-//     return;
-//   }
-//   await job.deleteOne();
-//   res.status(200).json({ message: "Success, Job Deleted!" });
-// };
+async function deleteJobController(req, res, next){
+  const { id } = req.params;
+  //find job
+  const job = await jobsModel.findOne({ _id: id });
+  //validation
+  if (!job) {
+    next(`No Job Found With This ID ${id}`);
+  }
+  if (!(req.user.userId === job.createdBy.toString())) {
+    next("Your Not Authorize to delete this job");
+    return;
+  }
+  await job.deleteOne();
+  res.status(200).json({ message: "Success, Job Deleted!" });
+};
 
 // // =======  JOBS STATS & FILTERS ===========
 // export const jobStatsController = async (req, res) => {
