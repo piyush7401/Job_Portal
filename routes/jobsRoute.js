@@ -1,5 +1,5 @@
 const express = require("express");
-const {createJobController,getAllJobsController,updateJobController,deleteJobController} = require("../controllers/jobsController");
+const {createJobController,getAllJobsController,updateJobController,deleteJobController,jobStatsController} = require("../controllers/jobsController");
 const userAuth = require("../middleware/authMiddleware.js");
 
 const router = express.Router();
@@ -18,7 +18,7 @@ router.patch("/update-job/:id", userAuth, updateJobController);
 router.delete("/delete-job/:id", userAuth, deleteJobController);
 
 // JOBS STATS FILTER || GET
-// router.get("/job-stats", userAuth, jobStatsController
+router.get("/job-stats", userAuth, jobStatsController);
 
 
 module.exports = router;
