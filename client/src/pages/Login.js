@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <>
       <div className="form-container">
-        <form className="card p-5" onSubmit={handlesubmit}>
+        <form className="p-5" onSubmit={handlesubmit}>
           <div className="mb-1">
             <h1>Registration is Required!!</h1>
           </div>
