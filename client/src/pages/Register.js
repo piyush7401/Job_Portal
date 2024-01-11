@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import InputForm from "../components/share/input";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -11,7 +12,7 @@ const Register = () => {
   const handlesubmit = (e) => {
     e.preventDefault();
     try {
-      console.log(name, email, lastName, password, location);
+      console.log(name, lastName, email, password, location);
     } catch {
       console.log(e.error);
     }
@@ -33,7 +34,6 @@ const Register = () => {
     setEmail(e.target.value);
   };
 
-
   const handleLocationchange = (e) => {
     setLocation(e.target.value);
   };
@@ -45,66 +45,46 @@ const Register = () => {
           <div className="mb-1">
             <h1>Registration is Required!!</h1>
           </div>
-          <div className="mb-1">
-            <label htmlFor="name" className="form-label">
-              Name:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="name"
-              value={name}
-              onChange={handleNamechange}
-            />
-          </div>
-          <div className="mb-1">
-            <label htmlFor="lastName" className="form-label">
-              Last Name:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="lastName"
-              value={lastName}
-              onChange={handleLastNamechange}
-            />
-          </div>
-          <div className="mb-1">
-            <label htmlFor="email" className="form-label">
-              Email address:
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              value={email}
-              onChange={handleEmailchange}
-            />
-          </div>
-          <div className="mb-1">
-            <label htmlFor="password" className="form-label">
-              Password:
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              value={password}
-              onChange={handlePasswordchange}
-            />
-          </div>
-          <div className="mb-1">
-            <label htmlFor="location" className="form-label">
-              Location:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="location"
-              value={location}
-              onChange={handleLocationchange}
-            />
-          </div>
+          <InputForm
+            htmlFor="name"
+            labelText="Name"
+            type="text"
+            name="name"
+            value={name}
+            handleChange={handleNamechange}
+          ></InputForm>
+          <InputForm
+            htmlFor="lastName"
+            labelText="Last Name"
+            type="text"
+            name="lastName"
+            value={lastName}
+            handleChange={handleLastNamechange}
+          ></InputForm>
+          <InputForm
+            htmlFor="email"
+            labelText="Email"
+            type="email"
+            name="email"
+            value={email}
+            handleChange={handleEmailchange}
+          ></InputForm>
+          <InputForm
+            htmlFor="password"
+            labelText="Password"
+            type="password"
+            name="password"
+            value={password}
+            handleChange={handlePasswordchange}
+          ></InputForm>
+          <InputForm
+            htmlFor="location"
+            labelText="Location"
+            type="text"
+            name="location"
+            value={location}
+            handleChange={handleLocationchange}
+          ></InputForm>
           <div className="d-flex justify-content-between">
             <p>
               Already Registered!! <Link to="/login">Login</Link>
