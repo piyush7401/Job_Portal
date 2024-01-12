@@ -28,9 +28,10 @@ const Login = () => {
     <>
       <div className="form-container">
         <form className="p-5" onSubmit={handlesubmit}>
-          <div className="mb-1">
-            <h1>Registration is Required!!</h1>
+          <div className="mb-3">
+            <h1>Login is Required!!</h1>
           </div>
+          <h5>
           <InputForm
             htmlFor="email"
             labelText="Email"
@@ -55,6 +56,7 @@ const Login = () => {
               Register
             </button>
           </div>
+          </h5>
         </form>
       </div>
     </>

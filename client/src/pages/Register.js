@@ -42,57 +42,61 @@ const Register = () => {
     <>
       <div className="form-container">
         <form className="p-5" onSubmit={handlesubmit}>
-          <div className="mb-1">
+          <div className="mb-3">
             <h1>Registration is Required!!</h1>
           </div>
-          <InputForm
-            htmlFor="name"
-            labelText="Name"
-            type="text"
-            name="name"
-            value={name}
-            handleChange={handleNamechange}
-          ></InputForm>
-          <InputForm
-            htmlFor="lastName"
-            labelText="Last Name"
-            type="text"
-            name="lastName"
-            value={lastName}
-            handleChange={handleLastNamechange}
-          ></InputForm>
-          <InputForm
-            htmlFor="email"
-            labelText="Email"
-            type="email"
-            name="email"
-            value={email}
-            handleChange={handleEmailchange}
-          ></InputForm>
-          <InputForm
-            htmlFor="password"
-            labelText="Password"
-            type="password"
-            name="password"
-            value={password}
-            handleChange={handlePasswordchange}
-          ></InputForm>
-          <InputForm
-            htmlFor="location"
-            labelText="Location"
-            type="text"
-            name="location"
-            value={location}
-            handleChange={handleLocationchange}
-          ></InputForm>
-          <div className="d-flex justify-content-between">
-            <p>
-              Already Registered!! <Link to="/login">Login</Link>
-            </p>
-            <button type="submit" className="btn btn-primary">
-              Register
-            </button>
-          </div>
+          <h5>
+            <InputForm
+              htmlFor="name"
+              labelText="Name"
+              type="text"
+              name="name"
+              value={name}
+              handleChange={handleNamechange}
+            ></InputForm>
+            <InputForm
+              htmlFor="lastName"
+              labelText="Last Name"
+              type="text"
+              name="lastName"
+              value={lastName}
+              handleChange={handleLastNamechange}
+            ></InputForm>
+            <InputForm
+              htmlFor="email"
+              labelText="Email"
+              type="email"
+              name="email"
+              value={email}
+              handleChange={handleEmailchange}
+            ></InputForm>
+            <InputForm
+              htmlFor="password"
+              labelText="Password"
+              type="password"
+              name="password"
+              value={password}
+              handleChange={handlePasswordchange}
+            ></InputForm>
+            <InputForm
+              htmlFor="location"
+              labelText="Location"
+              type="text"
+              name="location"
+              value={location}
+              handleChange={handleLocationchange}
+            ></InputForm>
+          </h5>
+          <h5>
+            <div className="d-flex justify-content-between">
+              <p>
+                Already Registered!! <Link to="/login">Login</Link>
+              </p>
+              <button type="submit" className="btn btn-primary">
+                Register
+              </button>
+            </div>
+          </h5>
         </form>
       </div>
     </>

@@ -4,29 +4,28 @@ import "../styles/Homepage.css";
 const HomePage = () => {
   return (
     <>
-      <video autoPlay muted loop id="myVideo">
-        <source src="/assets/videos/bg.mp4" type="video/mp4" />
-      </video>
-      <div className="content">
-        <div className="card w-25">
-          <img src="/assets/images/logo/logo.png" alt="logo" />
-          <hr />
-          <div className="card-body" style={{ marginTop: "-60px" }}>
-            <h5 className="card-title">Indias No #1 Carrer Platform</h5>
-            <p className="card-text">
+      <div className="flex-container">
+        <div className="flex-item">
+          <div className="p-3">
+            <h1>Indias No #1 Carrer Platform!!</h1>
+          </div>
+          <div className="p-3">
+            <h4>
               Search and manage your jobs with ease. free and open source job
-              ortal application by techinfoyt
-            </p>
-            <div className="d-flex justify-content-between mt-5">
-              <p>
-                Not a user Register <Link to="/register">Here !</Link>{" "}
-              </p>
-              <p>
-                <Link to="/login" className="myBtn">
+              portal application by Piyush Varshney.
+            </h4>
+          </div>
+          <div className="p-3">
+            <h4>
+            Not a user Register <Link to="/register">Here !</Link>{" "}
+            </h4>          
+          </div>
+          <div className="p-3">
+            <h4>
+            <Link to="/login" className="myBtn">
                   Login
                 </Link>
-              </p>
-            </div>
+            </h4>
           </div>
         </div>
       </div>
