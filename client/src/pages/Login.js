@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import InputForm from '../components/share/input';
+import UserContext from '../context/UserContext';
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const {setUser} = useContext(UserContext);
+
   const handlesubmit = (e) => {
     e.preventDefault();
+    setUser({email,password});
     try {
       console.log( email, password );
     } catch {
