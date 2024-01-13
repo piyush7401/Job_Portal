@@ -1,21 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 import React, { useState,useContext } from 'react'
 import InputForm from '../components/share/input';
 import UserContext from '../context/UserContext';
+import axios from "axios";
 
 const Login = () => {
 
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const {setUser} = useContext(UserContext);
 
-  const handlesubmit = (e) => {
+  const handlesubmit = async(e) => {
     e.preventDefault();
-    setUser({email,password});
+    console.log( email, password );
     try {
-      console.log( email, password );
+      setUser({email,password});
+      const {data} = await axios.post('http://localhost:8000/api/v1/auth/login',{email,password});
+      if (data.success) {
+        alert("Login Successfully ");
+        navigate("/dashboard");
+      }
     } catch {
+      alert("invalid data");
       console.log(e.error);
     }
   };
@@ -54,10 +62,10 @@ const Login = () => {
           ></InputForm>
           <div className="d-flex justify-content-between">
             <p>
-              Not Registered!! <Link to="/register">Login</Link>
+              Not Registered!! <Link to="/register">Register</Link>
             </p>
             <button type="submit" className="btn btn-primary">
-              Register
+              Login
             </button>
           </div>
           </h5>

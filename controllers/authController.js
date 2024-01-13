@@ -25,7 +25,7 @@ async function registerController(req,res,next){
    const token = user.createJWT();
   //  headers.append("Authorization", "Bearer " + token);
    res.status(201).cookie("token",token,{samesite:"none",secure:true}).json({
-     sucess: true,
+     success: true,
      message: "User Created Successfully",
      user: {
        name: user.name,
@@ -39,6 +39,9 @@ async function registerController(req,res,next){
 
 async function loginController(req, res, next){
   const { email, password } = req.body;
+
+  console.log(email);
+  console.log(password);
   //validation
   if (!email || !password) {
     return next("Please Provide All Fields");

@@ -1,19 +1,32 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import InputForm from "../components/share/input";
+import UserContext from "../context/UserContext";
+import axios from "axios";
 
 const Register = () => {
+
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [location, setLocation] = useState("");
+  const {setUser} = useContext(UserContext);  
 
-  const handlesubmit = (e) => {
+  const handlesubmit = async(e) => {
     e.preventDefault();
+    console.log(name, lastName, email, password, location);
     try {
-      console.log(name, lastName, email, password, location);
+      setUser({name,lastName,email,password,location});
+      const {data} = await axios.post('http://localhost:8000/api/v1/auth/register',{name,lastName,email,password,location});
+      if (data.success) {
+        alert("Register Successfully ");
+        navigate("/dashboard");
+      }
     } catch {
+      alert("invalid data");
       console.log(e.error);
     }
   };
