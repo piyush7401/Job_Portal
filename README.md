@@ -14,7 +14,6 @@ Welcome to the Job Portal website, a platform for users to register, log in, cre
 - [Controllers](#controllers)
 - [Models](#models)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
