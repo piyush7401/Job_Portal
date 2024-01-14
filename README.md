@@ -9,7 +9,6 @@ The Job Portal Website is a platform designed to facilitate job seekers and empl
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Install dependencies](#Install dependencies)
 - [Setup](#Setup)
 - [Usage](#usage)
   - [User Authentication](#user-authentication)
@@ -51,7 +50,7 @@ The Job Portal Website is a platform designed to facilitate job seekers and empl
 - cors: Library allows or restricts cross-origin HTTP
 - cookie-parser: It parses cookies attached to the client's request and makes them available
 
-### Setup
+## Setup
 
 1. **Backend Setup:**
    - Install Node.js and npm.
@@ -76,14 +75,14 @@ The Job Portal Website is a platform designed to facilitate job seekers and empl
 - Delete Job: Users can delete their own jobs.
 - Job Statistics: Users can view statistics, including the total number of jobs and monthly job applications.
 
-### Controllers
+## Controllers
 - authController.js: Handles user registration and login.
 - jobsController.js: Manages job-related functionalities, including creation, retrieval, update, deletion, and statistics.
 - userController.js: Handles user profile updates.
 
-### Models
+## Models
 - userModel.js: Defines the user schema, including name, email, password, and location.
 - jobsModel.js: Defines the job schema, including company, position, status, work type, work location, and createdBy.
 
-### Contributing
+## Contributing
 Contributions are welcome! If you find any issues or have suggestions, please open an issue or create a pull request.
