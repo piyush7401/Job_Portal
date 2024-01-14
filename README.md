@@ -38,3 +38,7 @@ Welcome to the Job Portal website, a platform for users to register, log in, cre
 - jsonwebtoken: JSON Web Token (JWT) implementation for Node.js
 - validator: Library for string validation and sanitization
 - moment: Library for parsing, validating, manipulating, and formatting dates
+- cors: Library allows or restricts cross-origin HTTP
+- cookie-parser: It parses cookies attached to the client's request and makes them available
+
+  
