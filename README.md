@@ -1,6 +1,7 @@
 # Job Portal Website
 
-Welcome to the Job Portal website, a platform for users to register, log in, create, manage, and apply for jobs.
+## Description
+The Job Portal Website is a platform designed to facilitate job seekers and employers in the process of job listing, application, and management. The motivation behind this project was to create a user-friendly and efficient system that simplifies job-related activities. The website allows users to register, log in, create and manage job listings, apply for jobs, and view statistics related to job applications.
 
 ## Table of Contents
 
@@ -8,6 +9,8 @@ Welcome to the Job Portal website, a platform for users to register, log in, cre
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Install dependencies](#Install dependencies)
+- [Setup](#Setup)
 - [Usage](#usage)
   - [User Authentication](#user-authentication)
   - [Job Management](#job-management)
@@ -30,7 +33,15 @@ Welcome to the Job Portal website, a platform for users to register, log in, cre
 - Node.js and npm installed
 - MongoDB installed and running
 
-### Package Install
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/piyush7401/Job_Portal
+
+2. **Install dependencies**
+
 - express: Web application framework for Node.js
 - mongoose: MongoDB object modeling for Node.js
 - bcryptjs: Library for hashing passwords
@@ -40,6 +51,17 @@ Welcome to the Job Portal website, a platform for users to register, log in, cre
 - cors: Library allows or restricts cross-origin HTTP
 - cookie-parser: It parses cookies attached to the client's request and makes them available
 
+### Setup
+
+1. **Backend Setup:**
+   - Install Node.js and npm.
+   - Install project dependencies: `npm install`.
+   - Set up environment variables for API credentials.
+
+2. **Frontend Setup:**
+   - React is used for the frontend.
+   - Install dependencies: `npm install`.
+   - Start the development server: `npm start`.
   
 ## Usage
 ### User Authentication  
