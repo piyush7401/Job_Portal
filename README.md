@@ -42,27 +42,27 @@ Welcome to the Job Portal website, a platform for users to register, log in, cre
 - cookie-parser: It parses cookies attached to the client's request and makes them available
 
   
-##Usage
-###User Authentication  
+## Usage
+### User Authentication  
 - Register: Create a new user account by providing a name, email, and password.
 - Login: Existing users can log in using their email and password.
 - User Profile Update: Users can update their profile details, including name, email, last name, and location.
 
-###Job Management
+### Job Management
 - Create Job: Users can create new job listings by providing company and position details.
 - View Jobs: Users can view a list of jobs, with options to filter by status, work type, and search.
 - Update Job: Users can update their own jobs by modifying company and position details.
 - Delete Job: Users can delete their own jobs.
 - Job Statistics: Users can view statistics, including the total number of jobs and monthly job applications.
 
-###Controllers
+### Controllers
 - authController.js: Handles user registration and login.
 - jobsController.js: Manages job-related functionalities, including creation, retrieval, update, deletion, and statistics.
 - userController.js: Handles user profile updates.
 
-###Models
+### Models
 - userModel.js: Defines the user schema, including name, email, password, and location.
 - jobsModel.js: Defines the job schema, including company, position, status, work type, work location, and createdBy.
 
-###Contributing
+### Contributing
 Contributions are welcome! If you find any issues or have suggestions, please open an issue or create a pull request.
