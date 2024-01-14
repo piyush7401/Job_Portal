@@ -31,9 +31,10 @@ Welcome to the Job Portal website, a platform for users to register, log in, cre
 - Node.js and npm installed
 - MongoDB installed and running
 
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
+### Package Install
+- express: Web application framework for Node.js
+- mongoose: MongoDB object modeling for Node.js
+- bcryptjs: Library for hashing passwords
+- jsonwebtoken: JSON Web Token (JWT) implementation for Node.js
+- validator: Library for string validation and sanitization
+- moment: Library for parsing, validating, manipulating, and formatting dates
